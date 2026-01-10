@@ -86,20 +86,29 @@ Tiny airports like **Papa Westray and Westray (Orkney Islands)** top Harmonic ce
 This result is **mathematically proven** in the analysis and not an anomaly.
 
 ---
+## 🧮 Example: Why Papa Westray Ranks So High (Harmonic Centrality)
 
-## 🧮 Example (Why Papa Westray Ranks So High)
+Harmonic centrality measures **how efficiently an airport can reach all others** by
+summing the inverse of travel distances.
 
-Harmonic centrality uses:
+In simple terms:
 
-\[
-C_H(v) = \sum \frac{1}{d(v, u)}
-\]
+- **Short distances contribute a lot**
+- **Long distances contribute very little**
 
-A 2.8 km flight contributes **~0.36**,  
-while a 400 km flight contributes **~0.0025**.
+### How the math works (intuitive explanation)
 
-➡️ Local proximity compounds efficiency.
+- A **2.8 km** flight contributes approximately **0.36**
+- A **400 km** flight contributes approximately **0.0025**
 
+Even though both are just one connection, the shorter flight contributes **over 140× more**.
+
+### Why this matters
+
+Papa Westray has **very short connections** to nearby islands.
+These short distances **compound**, giving it an extremely high efficiency score.
+
+➡️ **Local proximity compounds efficiency**, even with very few flights.
 ---
 
 ## 🗺️ Visual Outputs
