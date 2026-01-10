@@ -220,9 +220,5 @@ It demonstrates applied skills in:
 
 ---
 
-*If you want next:*  
-- 📌 image placement suggestions  
-- 📌 a 10-second recruiter summary at the top  
-- 📌 README optimisation for Snowfox / Leisure DB  
 
-**Say the word.**
+
