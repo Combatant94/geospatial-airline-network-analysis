@@ -1,11 +1,20 @@
-# ✈️ Beyond Passenger Numbers  
-## Hidden Connectivity in the Global Airline Network  
+## ✈️ Geospatial Airline Network Analysis  
+### Beyond Passenger Numbers: Hidden Connectivity in the Global Airline Network
 
-**MSc Data Science Project – Birkbeck, University of London**  
-**Supervisor:** Dr Felix Reidl  
+## 🧭 Quick Overview
+
+**What you’ll find in this repo**
+1. Jupyter notebook with geospatial metrics and maps
+2. Fully cleaned global airline datasets
+3. Geographic network analysis using real distances
+4. Visual outputs linking spatial positioning to centrality
+
 
 <img width="2000" height="1336" alt="image" src="https://github.com/user-attachments/assets/3d2f4422-269a-4274-bfba-69be72325698" />
 
+
+**MSc Data Science Project – Birkbeck, University of London**  
+**Supervisor:** Dr Felix Reidl  
 
 ---
 
