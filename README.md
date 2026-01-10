@@ -1,159 +1,205 @@
-# Beyond Passenger Numbers  
-## Hidden Connectivity in the Global Airline Network
+# ✈️ Beyond Passenger Numbers  
+## Hidden Connectivity in the Global Airline Network  
 
 **MSc Data Science Project – Birkbeck, University of London**  
-Supervisor: Dr Felix Reidl  
+**Supervisor:** Dr Felix Reidl  
+
+<img width="2000" height="1336" alt="image" src="https://github.com/user-attachments/assets/3d2f4422-269a-4274-bfba-69be72325698" />
+
 
 ---
 
 ## 📌 Project Overview
 
-Airports are usually ranked by **passenger volume or number of flights**.  
-This project asks a different, more structural question:
+Airports are usually ranked by passenger numbers or flight volume.  
+While useful, these rankings answer only one question: **who is busy?**
 
-> **Which airports are truly important to the global airline network – and why?**
+This project asks a different and more structural question:
 
-Using **network theory + geospatial analysis**, I show that airport importance is **multi-dimensional** and depends on *how* an airport connects the network, not just how busy it is.
+> **Which airports are genuinely important to the global airline network — and for what reason?**
+
+By combining **network theory** with **real geographic distance**, this analysis shows that airport importance is **not one-dimensional**.
+
+An airport can matter because it:
+- connects many places  
+- links regions  
+- makes travel significantly more efficient — **even if it is small**
 
 ---
 
 ## 🎯 Why This Project Matters
 
-Traditional rankings miss important insights:
+Traditional rankings hide important roles played by airports:
 
-- Some airports **bridge continents**
-- Some **connect influential hubs**
-- Some **dramatically reduce travel distance** for entire regions
+- Some airports act as **bridges between continents**
+- Some connect **highly influential hubs**
+- Some dramatically **reduce travel distance** for entire regions
 
-This project demonstrates why **no single metric** (like passenger numbers) is enough.
+If we only look at passenger numbers, we miss these roles entirely.
+
+This project demonstrates why **no single metric** can explain global connectivity.
 
 ---
 
 ## 🔍 What Makes This Project Different
 
+This analysis goes beyond surface-level rankings:
+
 - Models the airline system as a **directed, distance-weighted network**
 - Uses **multiple centrality measures together**, not in isolation
-- Incorporates **real geographic distance** (Haversine formula)
-- **Mathematically explains unexpected results**
-- Shows why **small regional airports can outrank global hubs** under certain metrics
+- Incorporates **real geographic distance** using the Haversine formula
+- Provides **mathematical justification** for unexpected results
+- Explains why **small regional airports** can outrank global hubs under certain measures
+
+Every result is explained by **how the metric works**, not treated as an anomaly.
 
 ---
 
 ## 🧠 Methodology (High Level)
 
-**Data**
-- OpenFlights global airport & route dataset
-- ~3,200 airports, ~36,000 routes
+### Data
+- OpenFlights global airport and route dataset
+- ~3,200 airports
+- ~36,000 directed flight routes
 
-**Network Construction**
-- Nodes: airports  
-- Edges: directed flight routes  
-- Edge weights: geographic distance (km)
+### Network Construction
+- **Nodes:** airports  
+- **Edges:** directed flight routes  
+- **Edge weights:** geographic distance (km)
 
-**Centrality Measures Used**
-- **Degree** – number of direct connections  
-- **Betweenness** – importance as a bridge between regions  
-- **Eigenvector** – connection to influential hubs  
-- **Harmonic** – overall travel efficiency (distance-based)
+This reflects how air travel actually works: **direction matters, and distance matters.**
+
+### Centrality Measures Used
+- **Degree** – how many direct connections an airport has  
+- **Betweenness** – how often an airport lies on shortest paths between regions  
+- **Eigenvector** – how connected an airport is to other influential airports  
+- **Harmonic** – how efficiently an airport can reach all others (distance-based)
+
+Each measure captures a **different role** in the network.
 
 ---
 
 ## ⭐ Key Findings (With Real Insight)
 
-### 1️⃣ Major hubs dominate Degree centrality  
-Airports like **Frankfurt, Paris CDG, Amsterdam** lead due to broad route diversity.
+### 1️⃣ Major hubs dominate Degree centrality
+
+Airports such as **Frankfurt**, **Paris CDG**, and **Amsterdam** rank highest because they serve a wide range of destinations.
+
+Degree centrality rewards **route diversity**, which naturally favours large hubs.
 
 ---
 
-### 2️⃣ Strategic connectors dominate Betweenness  
-Airports such as **Keflavik (Iceland)** and **Anchorage** rank highly despite modest traffic, because they sit between major regions.
+### 2️⃣ Strategic connectors dominate Betweenness
+
+Airports like **Keflavik (Iceland)** and **Anchorage** rank highly despite modest passenger traffic.
+
+**Why?**  
+Their geographic position places them on many shortest paths between regions.
+
+They function as **bridges**, not just destinations.
 
 ---
 
-### 3️⃣ Influence matters more than volume (Eigenvector)  
-**Heathrow, JFK, Dubai** score highly because they connect to *other powerful hubs*, even if they don’t have the most routes.
+### 3️⃣ Influence matters more than volume (Eigenvector)
+
+**Heathrow**, **JFK**, and **Dubai** score highly because they are connected to other powerful hubs.
+
+Eigenvector centrality does **not** reward how many routes you have —  
+it rewards **who you are connected to**.
+
+This explains why some globally important airports rank higher here than in simple route counts.
 
 ---
 
-### 4️⃣ Small airports can dominate efficiency (Harmonic)  
-Tiny airports like **Papa Westray and Westray (Orkney Islands)** top Harmonic centrality.
+### 4️⃣ Small airports can dominate efficiency (Harmonic)
 
-**Why?**
-- Extremely short flight distances (e.g. 2.8 km)
-- Harmonic centrality sums inverse distances
-- Short links produce very large efficiency gains
+Tiny airports such as **Papa Westray** and **Westray** (Orkney Islands) rank at the very top of Harmonic centrality.
 
-This result is **mathematically proven** in the analysis and not an anomaly.
+At first glance, this looks impossible — until you understand how the metric works.
 
 ---
+
 ## 🧮 Example: Why Papa Westray Ranks So High (Harmonic Centrality)
 
-Harmonic centrality measures **how efficiently an airport can reach all others** by
-summing the inverse of travel distances.
+Harmonic centrality measures how efficiently a node can reach all others by summing inverse distances:
 
-In simple terms:
+C_H(v) = Σ (1 / d(v, u))
 
-- **Short distances contribute a lot**
-- **Long distances contribute very little**
+### What this means in practice
+- Short distances contribute **a lot**
+- Long distances contribute **very little**
 
-### How the math works (intuitive explanation)
+### Intuitive comparison
+- A **2.8 km** flight contributes ≈ **0.36**
+- A **400 km** flight contributes ≈ **0.0025**
 
-- A **2.8 km** flight contributes approximately **0.36**
-- A **400 km** flight contributes approximately **0.0025**
+These values come directly from inverse distance:
+- `1 / 2.8 ≈ 0.36`
+- `1 / 400 = 0.0025`
 
-Even though both are just one connection, the shorter flight contributes **over 140× more**.
+So although both are “one flight”, the short flight contributes **over 140× more** to efficiency.
 
-### Why this matters
+### Why Papa Westray benefits
 
-Papa Westray has **very short connections** to nearby islands.
-These short distances **compound**, giving it an extremely high efficiency score.
+Papa Westray is connected by **extremely short flights** to nearby islands.  
+Each short distance adds a large efficiency contribution, and together they compound.
 
-➡️ **Local proximity compounds efficiency**, even with very few flights.
+Large hubs may have many connections, but those connections span **hundreds or thousands of kilometres**, producing very small inverse values.
+
+➡️ **Local proximity compounds efficiency, even with very few flights.**
+
+This result is **mathematically expected**, not an anomaly.
+
 ---
 
 ## 🗺️ Visual Outputs
+- Global airport maps coloured by centrality measure
+- Correlation heatmaps comparing metrics
+- Top-10 ranked airports for each centrality
 
-- Global airport maps by centrality
-- Correlation heatmaps between measures
-- Ranked top-10 airports for each metric
+📌 Figures will be added in the `/images` directory.
 
-📌 *Image placeholders below (to be added)*  
 ---
 
 ## 🛠️ Tools & Technologies
-
-- **Python**
-- **NetworkX**
-- **Pandas / NumPy**
-- **GeoPandas / Shapely**
-- **Matplotlib / Seaborn**
-- **Haversine distance**
+- Python  
+- NetworkX  
+- Pandas / NumPy  
+- GeoPandas / Shapely  
+- Matplotlib / Seaborn  
+- Haversine distance calculations  
 
 ---
 
 ## 📁 Repository Structure
+
+```text
 global-airline-network-centrality/
 │
 ├── README.md
-├── Netwrork_Aanalsis.ipynb
+├── Network_Analysis.ipynb     Python-code
+│
 ├── data/
 │   ├── nodes.csv
 │   ├── edges.csv
 │   └── gprops.csv
+│
 ├── report/
-│   └── MSc_Dissertation.pdf
+│   └── Centrality_metrics _airlines netwrok(1).pdf  Full_Report
+│
 └── images/
----
+```
 
 ## 🎓 Academic Context
 
 This project was submitted as part of the **MSc Data Science** degree at  
-**Birkbeck, University of London**, and demonstrates applied:
+**Birkbeck, University of London**.
 
+It demonstrates applied skills in:
 - Network science
 - Geospatial analysis
 - Mathematical reasoning
-- Real-world interpretation
+- Translating theory into real-world insight
 
 ---
 
@@ -162,4 +208,13 @@ This project was submitted as part of the **MSc Data Science** degree at
 **Mohd Nafees**  
 📍 London, UK  
 🔗 LinkedIn: https://linkedin.com/in/mohd-nafees-59863524b  
-💻 GitHub: https://github.com/Combatant94
+💻 GitHub: https://github.com/Combatant94  
+
+---
+
+*If you want next:*  
+- 📌 image placement suggestions  
+- 📌 a 10-second recruiter summary at the top  
+- 📌 README optimisation for Snowfox / Leisure DB  
+
+**Say the word.**
