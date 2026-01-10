@@ -1,6 +1,8 @@
 ## ✈️ Geospatial Airline Network Analysis  
 ### Beyond Passenger Numbers: Hidden Connectivity in the Global Airline Network
-
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![NetworkX](https://img.shields.io/badge/NetworkX-%E2%9C%93-orange)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-%E2%9C%93-green)
 ## 🧭 Quick Overview
 
 **What you’ll find in this repo**
