@@ -13,6 +13,7 @@
 
 Airports are usually ranked by passenger numbers or flight volume.  
 While useful, these rankings answer only one question: **who is busy?**
+<img width="507" height="264" alt="image" src="https://github.com/user-attachments/assets/8e2fbd37-0ea1-49a2-b123-d2e1c49568d7" />
 
 This project asks a different and more structural question:
 
@@ -24,6 +25,9 @@ An airport can matter because it:
 - connects many places  
 - links regions  
 - makes travel significantly more efficient — **even if it is small**
+
+<img width="516" height="509" alt="image" src="https://github.com/user-attachments/assets/41ab4e74-1f5d-4a15-a106-283eccb1e775" />
+
 
 ---
 
@@ -82,6 +86,7 @@ Each measure captures a **different role** in the network.
 ## ⭐ Key Findings (With Real Insight)
 
 ### 1️⃣ Major hubs dominate Degree centrality
+<img width="507" height="264" alt="image" src="https://github.com/user-attachments/assets/9e8f1499-b653-4428-9df6-01eac95ac213" />
 
 Airports such as **Frankfurt**, **Paris CDG**, and **Amsterdam** rank highest because they serve a wide range of destinations.
 
@@ -90,6 +95,7 @@ Degree centrality rewards **route diversity**, which naturally favours large hub
 ---
 
 ### 2️⃣ Strategic connectors dominate Betweenness
+<img width="511" height="266" alt="image" src="https://github.com/user-attachments/assets/01d144aa-b15a-408f-8959-3764b6663a1b" />
 
 Airports like **Keflavik (Iceland)** and **Anchorage** rank highly despite modest passenger traffic.
 
@@ -101,6 +107,7 @@ They function as **bridges**, not just destinations.
 ---
 
 ### 3️⃣ Influence matters more than volume (Eigenvector)
+<img width="515" height="267" alt="image" src="https://github.com/user-attachments/assets/f62cbadd-8c39-4c28-bd4c-a2d2632cb8d1" />
 
 **Heathrow**, **JFK**, and **Dubai** score highly because they are connected to other powerful hubs.
 
@@ -112,6 +119,7 @@ This explains why some globally important airports rank higher here than in simp
 ---
 
 ### 4️⃣ Small airports can dominate efficiency (Harmonic)
+<img width="519" height="381" alt="image" src="https://github.com/user-attachments/assets/a7826c4a-ce7a-498d-8522-22cc08876af3" />
 
 Tiny airports such as **Papa Westray** and **Westray** (Orkney Islands) rank at the very top of Harmonic centrality.
 
